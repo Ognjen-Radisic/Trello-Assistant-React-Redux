@@ -1,0 +1,8 @@
+.board-workspace {
+	@include flexVariant(flex-start);
+	flex-wrap: wrap;
+	max-width: $fullWidth;
+	width: 100%;
+	margin: 0 auto;
+	padding: 50px 30px;
+}
