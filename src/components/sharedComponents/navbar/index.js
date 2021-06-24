@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo.png";
+import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const Navbar = () => {
 	return (
 		<nav className="navbar">
 			<div className="navbar__container">
-				<Link to="/">
-					<h5>Home</h5>
+				<Link to="/" className="navbar__link-fix">
+					<AiOutlineHome className="navbar__btn" />
 				</Link>
-				<Link to="/">
-					<h5>Trello</h5>
+				<Link to="/" className="navbar__logo">
+					<h4>Trello</h4>
 				</Link>
-				<Link to="/">
-					<h5>About</h5>
+				<Link to="/" className="navbar__link-fix">
+					<AiOutlineInfoCircle className="navbar__btn" />
 				</Link>
 			</div>
 		</nav>
