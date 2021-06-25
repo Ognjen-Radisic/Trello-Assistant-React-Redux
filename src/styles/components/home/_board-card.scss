@@ -1,12 +1,23 @@
 .board-card {
-	width: 25%;
+	width: calc(25% - #{$sideBoardCardMargin}* 2);
+	min-width: 170px;
 	height: 96px;
 	background-color: $primaryColor;
 	cursor: pointer;
 	border-radius: 3px;
-	margin: 14px 8px;
+	margin: 12px $sideBoardCardMargin;
 	padding: 8px;
 	color: $mainWhite;
+
+	@include respond(tab-land) {
+		width: calc(33.33% - #{$sideBoardCardMargin}* 2);
+	}
+	@include respond(tab-port) {
+		width: calc(50% - #{$sideBoardCardMargin}* 2);
+	}
+	@include respond(mobile) {
+		width: calc(100% - #{$sideBoardCardMargin}* 2);
+	}
 	&:hover {
 		background-color: $primaryDarkColor;
 		.board-card__delete-icon {
