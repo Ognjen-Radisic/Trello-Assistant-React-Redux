@@ -1,0 +1,24 @@
+.create-board-card {
+	@include boardCardConfig();
+	@include flexVariant(center);
+	flex-direction: column;
+	background-color: $lightGrey;
+	color: $textColorDark;
+	text-align: center;
+	position: relative;
+
+	&:hover {
+		background-color: $darkGrey;
+	}
+	&__upper-p {
+		margin-bottom: 8px;
+	}
+	&__lower-p {
+		font-size: $fontSS;
+	}
+	&__question {
+		position: absolute;
+		right: 4px;
+		bottom: 4px;
+	}
+}

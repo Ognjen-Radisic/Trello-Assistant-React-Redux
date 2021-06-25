@@ -1,5 +1,6 @@
 //abstracts
 @import "abstracts/mixins";
+@import "abstracts/mixin-board-card";
 @import "abstracts/variables";
 
 //base styling
@@ -11,6 +12,7 @@
 //board
 //home
 @import "./components/home/board-card";
+@import "./components/home/create-board-card";
 @import "./components/home/board-workspace";
 //sharedComponents
 @import "./components/sharedComponents/navbar";

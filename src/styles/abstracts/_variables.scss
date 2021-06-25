@@ -3,9 +3,8 @@ $primaryColor: #026aa7;
 $primaryDarkColor: #0d5d8b;
 $primaryLightColor: #38bdff;
 $textColorDark: #172b4d;
-$mainGrey: #e1e2e3;
-$darkGrey: #777474;
-$lightGrey: #f0f0f0;
+$darkGrey: rgba(9, 30, 66, 0.08);
+$lightGrey: rgba(9, 30, 66, 0.04);
 $mainWhite: #fff;
 $offWhite: #f7f7f7;
 $overlayColor: #ffed28;
@@ -27,6 +26,7 @@ $footerWidth: 1300px;
 $sideBoardCardMargin: 8px;
 
 //fontSizes
+$fontSS: 12px;
 $fontS: 14px;
 $fontMS: 16px;
 $fontM: 18px;
