@@ -10,3 +10,13 @@ export const getBoards = () => async (dispatch) => {
 		console.log(error);
 	}
 };
+
+export const deleteBoard = (id) => async (dispatch) => {
+	try {
+		await api.deleteBoard(id);
+
+		dispatch({ type: "DELETE_BOARD", payload: id });
+	} catch (error) {
+		console.log(error);
+	}
+};

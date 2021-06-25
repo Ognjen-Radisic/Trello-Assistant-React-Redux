@@ -2,8 +2,8 @@ const boardsReducer = (boards = [], action) => {
 	switch (action.type) {
 		case "GET_BOARDS":
 			return action.payload;
-		case "CREATE_BOARD":
-			return boards;
+		case "DELETE_BOARD":
+			return boards.filter((item) => item.id !== action.payload);
 		default:
 			return boards;
 	}
