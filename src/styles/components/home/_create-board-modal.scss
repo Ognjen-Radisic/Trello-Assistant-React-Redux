@@ -1,0 +1,95 @@
+.create-board-modal-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	z-index: 90;
+}
+
+.create-board-modal {
+	position: fixed;
+	top: 40px;
+	left: 50%;
+	z-index: 100;
+	background-color: transparent;
+	transform: translateX(-50%);
+	color: $mainWhite;
+
+	&__board-title {
+		background-color: $primaryColor;
+		padding: 10px 40px 20px 20px;
+		position: relative;
+		border-radius: 3px;
+
+		input {
+			border: none !important;
+			background-color: transparent;
+			border-radius: 3px;
+			color: $mainWhite;
+			outline: none;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+				"Noto Sans", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif;
+			font-size: $fontM;
+			font-weight: 700;
+			left: -8px;
+			line-height: 24px;
+			margin-bottom: 8px;
+			padding: 2px 8px;
+			position: relative;
+
+			&:focus {
+				background-color: rgba(255, 255, 255, 0.3) !important;
+				outline: none;
+			}
+
+			&::-webkit-input-placeholder {
+				color: $offWhite;
+			}
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.15) !important;
+				box-shadow: none;
+			}
+			&:active {
+				border: none !important;
+			}
+		}
+	}
+	&__escape-btn {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		cursor: pointer;
+		font-size: $fontL;
+	}
+	&__btn-container {
+		@include flexVariant(center);
+		padding: 10px;
+		border-radius: 3px;
+	}
+
+	&__submit-btn {
+		padding: 8px 15px;
+		background-color: $textColor;
+		box-shadow: none;
+		border: none;
+		color: $mainWhite;
+		outline: 0;
+		cursor: pointer;
+		border-radius: 3px;
+
+		&:hover {
+			background-color: $primaryColor;
+		}
+		&:active {
+			background-color: $activeBtnColor;
+		}
+		&:disabled {
+			background-color: $disabledBtn;
+			color: $darkerGrey;
+			cursor: not-allowed;
+		}
+	}
+}

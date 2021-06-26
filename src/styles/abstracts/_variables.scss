@@ -1,16 +1,19 @@
-//colors
+//base colors
 $primaryColor: #026aa7;
 $primaryDarkColor: #0d5d8b;
 $primaryLightColor: #38bdff;
+$activeBtnColor: #055a8c;
 $textColor: #0079bf;
 $textColorDark: #172b4d;
 $cardBacgroundColor: #e4f0f6;
+
+//black & white colors
+$darkerGrey: #a5adba;
 $darkGrey: rgba(9, 30, 66, 0.08);
 $lightGrey: rgba(9, 30, 66, 0.04);
 $mainWhite: #fff;
-$offWhite: #f7f7f7;
-$overlayColor: #ffed28;
-$overlayColorDark: #b3a61d;
+$offWhite: rgba(255, 255, 255, 0.7);
+$disabledBtn: #f4f5f7;
 
 //other
 $mainTransition: all 0.2s linear;
