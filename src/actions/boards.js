@@ -1,5 +1,19 @@
 import * as api from "../api/boards";
 
+export const createBoard = (name) => async (dispatch) => {
+	try {
+		const response = await api.createBoard(name);
+		const data = await response.json();
+
+		dispatch({
+			type: "CREATE_BOARD",
+			payload: { id: data.id, name: data.name },
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 export const getBoards = () => async (dispatch) => {
 	try {
 		const response = await api.fetchBoards();

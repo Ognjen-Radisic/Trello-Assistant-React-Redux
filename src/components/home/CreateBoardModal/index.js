@@ -1,9 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
 import { BsX } from "react-icons/bs";
+
+//redux
+import { useDispatch } from "react-redux";
+import { createBoard } from "../../../actions/boards";
 
 const CreateBoardModal = ({ modalOpen, setModalOpen }) => {
 	const [boardName, setBoardName] = useState("");
 	const inputRef = useRef();
+	const dispatch = useDispatch();
+
+	const createNewBoard = () => {
+		dispatch(createBoard(boardName));
+		setBoardName("");
+		setModalOpen(false);
+	};
 
 	useEffect(() => {
 		if (modalOpen) {
@@ -35,7 +47,8 @@ const CreateBoardModal = ({ modalOpen, setModalOpen }) => {
 				<div className="create-board-modal__btn-container">
 					<button
 						className="create-board-modal__submit-btn"
-						disabled={!boardName.length}>
+						disabled={!boardName.length}
+						onClick={createNewBoard}>
 						Create board
 					</button>
 				</div>
@@ -45,3 +58,8 @@ const CreateBoardModal = ({ modalOpen, setModalOpen }) => {
 };
 
 export default CreateBoardModal;
+
+CreateBoardModal.propTypes = {
+	modalOpen: PropTypes.bool.isRequired,
+	setModalOpen: PropTypes.func.isRequired,
+};
