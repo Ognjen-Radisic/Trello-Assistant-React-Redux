@@ -5,7 +5,7 @@ const AddList = () => {
 	return (
 		<div className="add-list">
 			<BiPlus />
-			<h5>Add another list</h5>
+			<h6>Add another list</h6>
 		</div>
 	);
 };

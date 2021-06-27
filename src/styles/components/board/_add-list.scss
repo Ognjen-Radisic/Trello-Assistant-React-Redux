@@ -1,0 +1,15 @@
+.add-list {
+	@include addElementVariant();
+	width: 272px;
+	margin: 0 4px;
+	height: 36px;
+	background-color: $grey1;
+	color: $textColor;
+
+	&:hover {
+		background-color: $grey2;
+	}
+	&:active {
+		background-color: $grey3;
+	}
+}

@@ -5,7 +5,7 @@ import SingleCard from "../SingleCard";
 const SingleList = ({ name }) => {
 	return (
 		<div className="single-list">
-			<h6>LIST 1</h6>
+			<h6 className="single-list__title">LIST 1</h6>
 			<SingleCard />
 			<SingleCard />
 			<AddCard />

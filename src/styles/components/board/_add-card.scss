@@ -1,0 +1,14 @@
+.add-card {
+	@include addElementVariant();
+	width: 252px;
+	height: 36px;
+	background-color: transparent;
+	color: $textColorDark;
+
+	&:hover {
+		background-color: $grey4;
+	}
+	&:active {
+		background-color: $grey5;
+	}
+}

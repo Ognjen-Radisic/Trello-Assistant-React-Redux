@@ -3,9 +3,9 @@ import { BiPlus } from "react-icons/bi";
 
 const AddCard = () => {
 	return (
-		<div className="add-list">
+		<div className="add-card">
 			<BiPlus />
-			<h5>Add another card</h5>
+			<p>Add another card</p>
 		</div>
 	);
 };

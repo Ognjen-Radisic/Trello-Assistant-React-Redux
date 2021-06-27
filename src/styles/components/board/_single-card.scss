@@ -1,0 +1,11 @@
+.single-card {
+	width: 252px;
+	min-height: 20px;
+	color: $textColorDark;
+	background-color: $mainWhite;
+	border-radius: 3px;
+	box-shadow: 0px 3px 3px rgba(9, 30, 66, 0.25);
+	padding: 10px 15px;
+	margin-bottom: 8px;
+	cursor: pointer;
+}

@@ -4,6 +4,15 @@
 	align-items: center;
 }
 
+//for components addList and addCard
+@mixin addElementVariant() {
+	display: flex;
+	align-items: center;
+	padding: 10px 15px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
 // MEDIA QUERY MANAGER
 
 /*
