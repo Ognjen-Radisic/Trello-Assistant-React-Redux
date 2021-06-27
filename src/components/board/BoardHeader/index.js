@@ -2,15 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { getBoardName, updateBoardName } from "../../../api/boards";
 
-//redux
-import { useDispatch } from "react-redux";
-
 const BoardHeader = () => {
 	//when we click on the title it changes into input element to allow editing
 	const [editMode, setEditMode] = useState(false);
 	const [boardName, setBoardName] = useState("");
 	const { boardid } = useParams();
-	const dispatch = useDispatch();
 
 	const getBoardNameOnMount = async (idOfBoard) => {
 		try {
