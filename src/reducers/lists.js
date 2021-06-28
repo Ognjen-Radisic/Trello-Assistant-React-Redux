@@ -15,9 +15,14 @@ const listsReducer = (lists = {}, action) => {
 			return action.payload.newListsFormat;
 		case "GET_CARDS":
 			const { curListID, cardsIDs } = action.payload;
-			const list = lists[curListID];
-			list.cards = [...cardsIDs];
-			return { ...lists, [curListID]: list };
+
+			return {
+				...lists,
+				[curListID]: {
+					...lists[curListID],
+					cards: [...cardsIDs],
+				},
+			};
 		case "DELETE_LIST":
 			return lists;
 		case "UPDATE_LIST":
