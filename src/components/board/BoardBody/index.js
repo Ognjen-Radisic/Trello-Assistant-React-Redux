@@ -8,7 +8,7 @@ import { getLists } from "../../../actions/lists";
 import { useParams } from "react-router-dom";
 
 const BoardBody = () => {
-	const lists = useSelector((state) => state.lists);
+	const listsOrder = useSelector((state) => state.listsOrder);
 	const dispatch = useDispatch();
 	const { boardid } = useParams();
 
@@ -18,8 +18,8 @@ const BoardBody = () => {
 
 	return (
 		<div className="board-body">
-			{lists.map((item) => {
-				return <SingleList key={item.id} id={item.id} name={item.name} />;
+			{listsOrder.map((item) => {
+				return <SingleList key={item} id={item} />;
 			})}
 			<AddList />
 		</div>

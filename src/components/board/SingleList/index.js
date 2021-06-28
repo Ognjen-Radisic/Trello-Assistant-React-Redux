@@ -5,10 +5,15 @@ import PropTypes from "prop-types";
 import AddCard from "../AddCard";
 import SingleCard from "../SingleCard";
 
-const SingleList = ({ name, id }) => {
+//redux
+import { useSelector } from "react-redux";
+
+const SingleList = ({ id }) => {
+	const lists = useSelector((state) => state.lists);
+
 	return (
 		<div className="single-list">
-			<h6 className="single-list__title">{name}</h6>
+			<h6 className="single-list__title">{lists[id].name}</h6>
 			<SingleCard />
 			<SingleCard />
 			<AddCard />
@@ -19,6 +24,5 @@ const SingleList = ({ name, id }) => {
 export default SingleList;
 
 SingleList.propTypes = {
-	name: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
 };
