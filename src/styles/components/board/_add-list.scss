@@ -1,6 +1,6 @@
 .add-list {
 	@include addElementVariant();
-	width: 272px;
+	min-width: 272px;
 	margin: 0 4px;
 	height: 36px;
 	background-color: $grey1;

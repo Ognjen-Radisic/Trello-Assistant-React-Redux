@@ -1,4 +1,10 @@
 .board-body {
 	display: flex;
 	padding: 10px 20px;
+	overflow: auto;
+	position: absolute;
+	bottom: 0;
+	top: 100px;
+	left: 0;
+	right: 0;
 }

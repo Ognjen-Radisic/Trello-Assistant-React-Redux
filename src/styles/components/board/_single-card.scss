@@ -8,4 +8,7 @@
 	padding: 10px 15px;
 	margin-bottom: 8px;
 	cursor: pointer;
+	&:hover {
+		background-color: $offWhite;
+	}
 }
