@@ -10,7 +10,7 @@
 const listsReducer = (lists = {}, action) => {
 	switch (action.type) {
 		case "CREATE_LIST":
-			return lists;
+			return { ...lists, ...action.payload.newList };
 		case "GET_LISTS":
 			return action.payload.newListsFormat;
 		case "GET_CARDS":

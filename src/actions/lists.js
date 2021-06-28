@@ -41,3 +41,29 @@ export const getLists = (boardID) => async (dispatch) => {
 		console.log(error);
 	}
 };
+
+export const createList = (boardID, name) => async (dispatch) => {
+	try {
+		const response = await api.createList(boardID, name);
+		const data = await response.json();
+
+		const listID = data.id;
+
+		const newList = {};
+		newList[listID] = {
+			id: listID,
+			name: name,
+			cards: [],
+		};
+
+		dispatch({
+			type: "CREATE_LIST",
+			payload: {
+				newList,
+				listID,
+			},
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};

@@ -7,6 +7,8 @@ const listsOrder = (state = [], action) => {
 			return action.payload.listsOrderByID;
 		case "RESET_LISTS_ORDER":
 			return [];
+		case "CREATE_LIST":
+			return [...state, action.payload.listID];
 		default:
 			return state;
 	}
