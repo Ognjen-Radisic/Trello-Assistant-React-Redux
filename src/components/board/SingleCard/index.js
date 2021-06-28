@@ -1,11 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const SingleCard = () => {
+const SingleCard = ({ id, name }) => {
 	return (
 		<div className="single-card">
-			<p>Example card</p>
+			<p>{name}</p>
 		</div>
 	);
 };
 
 export default SingleCard;
+
+SingleCard.propTypes = {
+	name: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+};
