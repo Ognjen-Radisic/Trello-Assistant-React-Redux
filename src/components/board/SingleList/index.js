@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 //components
@@ -16,7 +16,6 @@ const SingleList = ({ id }) => {
 
 	useEffect(() => {
 		dispatch(getCards(id));
-		console.log("hello");
 	}, [dispatch, id]);
 
 	return (

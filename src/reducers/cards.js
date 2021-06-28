@@ -10,6 +10,8 @@ const cardsReducer = (cards = {}, action) => {
 	switch (action.type) {
 		case "GET_CARDS":
 			return { ...cards, ...action.payload.cards };
+		case "GET_LISTS":
+			return {};
 
 		default:
 			return cards;

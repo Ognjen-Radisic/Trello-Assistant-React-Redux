@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import AddList from "../AddList";
 import SingleList from "../SingleList";
+import { useParams } from "react-router-dom";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { getLists } from "../../../actions/lists";
-import { useParams } from "react-router-dom";
 
 const BoardBody = () => {
 	const listsOrder = useSelector((state) => state.listsOrder);
@@ -14,6 +14,9 @@ const BoardBody = () => {
 
 	useEffect(() => {
 		dispatch(getLists(boardid));
+		return () => {
+			dispatch({ type: "RESET_LISTS_ORDER" });
+		};
 	}, [dispatch, boardid]);
 
 	return (

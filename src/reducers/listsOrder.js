@@ -5,6 +5,8 @@ const listsOrder = (state = [], action) => {
 	switch (action.type) {
 		case "GET_LISTS":
 			return action.payload.listsOrderByID;
+		case "RESET_LISTS_ORDER":
+			return [];
 		default:
 			return state;
 	}
