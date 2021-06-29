@@ -22,7 +22,14 @@ const SingleList = ({ listID }) => {
 		<div className="single-list">
 			<h6 className="single-list__title">{lists[listID].name}</h6>
 			{lists[listID].cards.map((item) => {
-				return <SingleCard key={item} id={item} name={cardsObj[item].name} />;
+				return (
+					<SingleCard
+						key={item}
+						id={item}
+						name={cardsObj[item].name}
+						listID={listID}
+					/>
+				);
 			})}
 
 			<AddCard listID={listID} />

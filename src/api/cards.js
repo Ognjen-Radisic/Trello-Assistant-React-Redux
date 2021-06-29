@@ -15,3 +15,8 @@ export const createCard = (listID, name) =>
 			method: "POST",
 		}
 	);
+
+export const deleteCard = (cardID) =>
+	fetch(`${url}/${cardID}?key=${trello.key}&token=${trello.token}`, {
+		method: "DELETE",
+	});

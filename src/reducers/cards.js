@@ -14,6 +14,10 @@ const cardsReducer = (cards = {}, action) => {
 			return {};
 		case "CREATE_CARD":
 			return { ...cards, ...action.payload.newCard };
+		case "DELETE_CARD":
+			const cardID = action.payload.cardID;
+			const { [cardID]: removed_item, ...filterdCards } = cards;
+			return filterdCards;
 		default:
 			return cards;
 	}

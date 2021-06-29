@@ -68,3 +68,13 @@ export const createCard = (listID, name) => async (dispatch) => {
 		console.log(error);
 	}
 };
+
+export const deleteCard = (cardID, listID) => async (dispatch) => {
+	try {
+		await api.deleteCard(cardID);
+
+		dispatch({ type: "DELETE_CARD", payload: { cardID, listID } });
+	} catch (error) {
+		console.log(error);
+	}
+};
