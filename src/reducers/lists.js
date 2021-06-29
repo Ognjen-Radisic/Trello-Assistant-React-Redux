@@ -38,7 +38,8 @@ const listsReducer = (lists = {}, action) => {
 			const newCards = lists[idList].cards.filter((item) => item !== idCard);
 			return { ...lists, [idList]: { ...lists[idList], cards: [...newCards] } };
 		case "DELETE_LIST":
-			return lists;
+			const { [action.payload.listID]: removed_item, ...filteredLists } = lists;
+			return { ...filteredLists };
 		case "UPDATE_LIST":
 			return lists;
 		default:

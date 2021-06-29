@@ -67,3 +67,13 @@ export const createList = (boardID, name) => async (dispatch) => {
 		console.log(error);
 	}
 };
+
+export const deleteList = (listID) => async (dispatch) => {
+	try {
+		await api.deleteList(listID);
+
+		dispatch({ type: "DELETE_LIST", payload: { listID } });
+	} catch (error) {
+		console.log(error);
+	}
+};

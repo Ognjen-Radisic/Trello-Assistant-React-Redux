@@ -9,6 +9,8 @@ const listsOrder = (state = [], action) => {
 			return [];
 		case "CREATE_LIST":
 			return [...state, action.payload.listID];
+		case "DELETE_LIST":
+			return state.filter((item) => item !== action.payload.listID);
 		default:
 			return state;
 	}

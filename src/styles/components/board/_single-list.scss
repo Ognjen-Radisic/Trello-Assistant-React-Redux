@@ -13,6 +13,18 @@
 	cursor: pointer;
 	height: fit-content;
 
+	&__top-container {
+		@include flexVariant(space-between);
+		align-items: flex-start;
+	}
+	&__delete-icon {
+		color: rgb(71, 87, 168);
+		transition: $mainTransition;
+		&:hover {
+			font-size: $fontML;
+		}
+	}
+
 	&__title {
 		color: $textColorDark;
 		margin-bottom: 10px;
