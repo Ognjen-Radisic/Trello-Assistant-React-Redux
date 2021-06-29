@@ -22,9 +22,9 @@ const BoardBody = () => {
 	return (
 		<div className="board-body">
 			{listsOrder.map((item) => {
-				return <SingleList key={item} id={item} />;
+				return <SingleList key={item} listID={item} />;
 			})}
-			<AddList />
+			<AddList id={boardid} />
 		</div>
 	);
 };

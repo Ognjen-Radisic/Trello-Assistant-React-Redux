@@ -9,23 +9,23 @@ import SingleCard from "../SingleCard";
 import { useSelector, useDispatch } from "react-redux";
 import { getCards } from "../../../actions/cards";
 
-const SingleList = ({ id }) => {
+const SingleList = ({ listID }) => {
 	const lists = useSelector((state) => state.lists); //list object to get list name and property cards array
 	const cardsObj = useSelector((state) => state.cards); // cards object to get names of cards
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getCards(id));
-	}, [dispatch, id]);
+		dispatch(getCards(listID));
+	}, [dispatch, listID]);
 
 	return (
 		<div className="single-list">
-			<h6 className="single-list__title">{lists[id].name}</h6>
-			{lists[id].cards.map((item) => {
+			<h6 className="single-list__title">{lists[listID].name}</h6>
+			{lists[listID].cards.map((item) => {
 				return <SingleCard key={item} id={item} name={cardsObj[item].name} />;
 			})}
 
-			<AddCard />
+			<AddCard listID={listID} />
 		</div>
 	);
 };
@@ -33,5 +33,5 @@ const SingleList = ({ id }) => {
 export default SingleList;
 
 SingleList.propTypes = {
-	id: PropTypes.string.isRequired,
+	listID: PropTypes.string.isRequired,
 };
