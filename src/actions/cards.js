@@ -23,7 +23,7 @@ export const getCards = (listID) => async (dispatch) => {
 		const cards = {};
 		data.forEach((element) => {
 			cards[element.id] = {
-				id: element.idList,
+				idList: element.idList,
 				name: element.name,
 				pos: element.pos,
 			};
@@ -35,6 +35,33 @@ export const getCards = (listID) => async (dispatch) => {
 				curListID, // id of the specif list (current list)
 				cards, // object of all cards structured in specific format (template above)
 				cardsIDs, //array of card ids for specif list
+			},
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const createCard = (listID, name) => async (dispatch) => {
+	try {
+		const response = await api.createCard(listID, name);
+		const data = await response.json();
+
+		const cardID = data.id;
+
+		const newCard = {};
+		newCard[cardID] = {
+			idList: listID,
+			name: name,
+			pos: data.pos,
+		};
+
+		dispatch({
+			type: "CREATE_CARD",
+			payload: {
+				cardID,
+				listID,
+				newCard,
 			},
 		});
 	} catch (error) {

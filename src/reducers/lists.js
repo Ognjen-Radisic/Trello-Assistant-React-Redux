@@ -23,6 +23,15 @@ const listsReducer = (lists = {}, action) => {
 					cards: [...cardsIDs],
 				},
 			};
+		case "CREATE_CARD":
+			const { listID, cardID } = action.payload;
+			return {
+				...lists,
+				[listID]: {
+					...lists[listID],
+					cards: [...lists[listID].cards, cardID],
+				},
+			};
 		case "DELETE_LIST":
 			return lists;
 		case "UPDATE_LIST":

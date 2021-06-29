@@ -4,7 +4,7 @@ import { BsX } from "react-icons/bs";
 
 //redux
 import { useDispatch } from "react-redux";
-import { createList } from "../../../actions/lists";
+import { createCard } from "../../../actions/cards";
 
 const AddCard = ({ listID }) => {
 	const [addingMode, setAddingMode] = useState(false);
@@ -18,7 +18,7 @@ const AddCard = ({ listID }) => {
 	const addNewCard = () => {
 		console.log(cardName);
 		if (!cardName || cardName[0] === " ") return;
-		// dispatch(createCard(listID, cardName));
+		dispatch(createCard(listID, cardName));
 		setCardName("");
 	};
 	const handleClose = () => {
