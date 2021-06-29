@@ -4,6 +4,7 @@
 	height: 36px;
 	background-color: transparent;
 	color: $textColorDark;
+	transition: $mainTransition;
 
 	&:hover {
 		background-color: $grey4;

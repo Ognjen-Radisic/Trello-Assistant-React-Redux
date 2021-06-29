@@ -5,6 +5,7 @@
 	height: 36px;
 	background-color: $grey1;
 	color: $textColor;
+	transition: $mainTransition;
 
 	&:hover {
 		background-color: $grey2;
