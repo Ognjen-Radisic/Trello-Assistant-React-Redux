@@ -11,11 +11,16 @@ const AddCard = ({ listID }) => {
 	const [cardName, setCardName] = useState("");
 	const dispatch = useDispatch();
 
+	const handleFormSubmit = (e) => {
+		e.preventDefault();
+	};
+
 	const handleChange = (e) => {
 		e.preventDefault();
 		if (e.target.value.length <= 100) setCardName(e.target.value);
 	};
-	const addNewCard = () => {
+	const addNewCard = (e) => {
+		e.preventDefault();
 		// console.log(cardName);
 		if (!cardName || cardName[0] === " ") return;
 		dispatch(createCard(listID, cardName));
@@ -30,22 +35,26 @@ const AddCard = ({ listID }) => {
 	return (
 		<>
 			{addingMode ? (
-				<div className="add-list__input">
-					<div className="bum">
-						<h6>hello</h6>
-						<input
-							type="text"
-							value={cardName}
-							onChange={handleChange}
-							onBlur={handleClose}
-							autoFocus
+				<form className="add-card-form">
+					<input
+						onSubmit={handleFormSubmit}
+						type="text"
+						value={cardName}
+						onChange={handleChange}
+						onBlur={handleClose}
+						autoFocus
+						placeholder="Enter a title for this card..."
+					/>
+					<div className="add-card-form__btn-container">
+						<button className="add-card-form__submit-btn" onClick={addNewCard}>
+							Add Card
+						</button>
+						<BsX
+							onClick={() => setAddingMode(false)}
+							className="add-card-form__close-btn"
 						/>
-						<div className="add-list__btn-container">
-							<button onClick={addNewCard}>Add Card</button>
-							<BsX onClick={() => setAddingMode(false)} />
-						</div>
 					</div>
-				</div>
+				</form>
 			) : (
 				<div className="add-card" onClick={() => setAddingMode(true)}>
 					<BiPlus />

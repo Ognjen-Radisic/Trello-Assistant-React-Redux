@@ -36,7 +36,7 @@ const AddList = ({ id }) => {
 	return (
 		<>
 			{addingMode ? (
-				<form className="add-list__input">
+				<form className="add-list-form">
 					<input
 						onSubmit={handleFormSubmit}
 						type="text"
@@ -44,10 +44,16 @@ const AddList = ({ id }) => {
 						onChange={handleChange}
 						onBlur={handleClose}
 						autoFocus
+						placeholder="Enter a list title..."
 					/>
-					<div className="add-list__btn-container">
-						<button onClick={addNewList}>Add list</button>
-						<BsX onClick={() => setAddingMode(false)} />
+					<div className="add-list-form__btn-container">
+						<button onClick={addNewList} className="add-list-form__submit-btn">
+							Add list
+						</button>
+						<BsX
+							onClick={() => setAddingMode(false)}
+							className="add-list-form__close-btn"
+						/>
 					</div>
 				</form>
 			) : (
