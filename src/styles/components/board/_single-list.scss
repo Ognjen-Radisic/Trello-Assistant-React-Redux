@@ -1,5 +1,5 @@
 .single-list {
-	width: 272px;
+	min-width: 272px;
 	background-color: rgb(180, 190, 233);
 	color: white;
 	border-radius: 3px;
@@ -16,6 +16,9 @@
 	&__top-container {
 		@include flexVariant(space-between);
 		align-items: flex-start;
+	}
+	&__cards-container {
+		min-height: 10px;
 	}
 	&__delete-icon {
 		color: rgb(71, 87, 168);

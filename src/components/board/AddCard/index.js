@@ -16,7 +16,7 @@ const AddCard = ({ listID }) => {
 		if (e.target.value.length <= 100) setCardName(e.target.value);
 	};
 	const addNewCard = () => {
-		console.log(cardName);
+		// console.log(cardName);
 		if (!cardName || cardName[0] === " ") return;
 		dispatch(createCard(listID, cardName));
 		setCardName("");

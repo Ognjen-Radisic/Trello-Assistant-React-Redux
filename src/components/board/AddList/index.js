@@ -23,7 +23,7 @@ const AddList = ({ id }) => {
 		e.preventDefault();
 
 		if (!listName || listName[0] === " ") return;
-		console.log(listName);
+		// console.log(listName);
 		dispatch(createList(id, listName));
 		setListName("");
 	};
