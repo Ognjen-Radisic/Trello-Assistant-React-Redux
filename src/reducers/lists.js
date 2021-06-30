@@ -42,6 +42,47 @@ const listsReducer = (lists = {}, action) => {
 			return { ...filteredLists };
 		case "UPDATE_LIST":
 			return lists;
+		case "CARD_DRAG_END":
+			const {
+				draggableId,
+				sourceIndex,
+				sourceDroppableId,
+				destinationIndex,
+				destinationDroppableId,
+			} = action.payload;
+
+			//if card is dropped in the same list and it has different position
+			if (sourceDroppableId === destinationDroppableId) {
+				//this is the array that card is removed from
+				const newArray = Array.from(lists[sourceDroppableId].cards);
+				newArray.splice(sourceIndex, 1);
+				newArray.splice(destinationIndex, 0, draggableId);
+
+				return {
+					...lists,
+					[sourceDroppableId]: {
+						...lists[sourceDroppableId],
+						cards: [...newArray],
+					},
+				};
+			} else {
+				const arrRemovedElement = Array.from(lists[sourceDroppableId].cards);
+				arrRemovedElement.splice(sourceIndex, 1);
+
+				const arrAddedElement = Array.from(lists[destinationDroppableId].cards);
+				arrAddedElement.splice(destinationIndex, 0, draggableId);
+				return {
+					...lists,
+					[sourceDroppableId]: {
+						...lists[sourceDroppableId],
+						cards: [...arrRemovedElement],
+					},
+					[destinationDroppableId]: {
+						...lists[destinationDroppableId],
+						cards: [...arrAddedElement],
+					},
+				};
+			}
 		default:
 			return lists;
 	}

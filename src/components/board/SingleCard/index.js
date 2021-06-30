@@ -6,20 +6,31 @@ import { FiTrash2 } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { deleteCard } from "../../../actions/cards";
 
-const SingleCard = ({ id, name, listID }) => {
+//drag-drop imports
+import { Draggable } from "react-beautiful-dnd";
+
+const SingleCard = ({ id, name, listID, index }) => {
 	const dispatch = useDispatch();
 
 	const handleDeleteCard = () => {
 		dispatch(deleteCard(id, listID));
 	};
 	return (
-		<div className="single-card">
-			<p>{name}</p>
-			<FiTrash2
-				className="single-card__delete-icon"
-				onClick={handleDeleteCard}
-			/>
-		</div>
+		<Draggable draggableId={id} index={index}>
+			{(provided) => (
+				<div
+					className="single-card"
+					{...provided.draggableProps}
+					{...provided.dragHandleProps}
+					ref={provided.innerRef}>
+					<p>{name}</p>
+					<FiTrash2
+						className="single-card__delete-icon"
+						onClick={handleDeleteCard}
+					/>
+				</div>
+			)}
+		</Draggable>
 	);
 };
 
