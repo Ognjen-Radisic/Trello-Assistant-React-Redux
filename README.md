@@ -2,7 +2,15 @@
 
 To run and edit the project, clone the project to your computer, `cd` into the project directory and follow the instructions below for your javascript package manager of choice.
 
-After cloning you will need to populate `.env` files with your own TRELLO API_KEY and TOKEN. Create trello account and follow official api documentation https://developer.atlassian.com/cloud/trello/rest/api-group-actions/
+After cloning you will need to create `.env` file with your own TRELLO API_KEY and TOKEN variables (see example below). Create trello account and follow official api documentation https://developer.atlassian.com/cloud/trello/rest/api-group-actions/
+
+```javascript
+REACT_APP_TRELLO_KEY=<YOUR_TRELLO_KEY>
+```
+
+```javascript
+REACT_APP_TRELLO_TOKEN=<YOUR_TRELLO_TOKEN>
+```
 
 ### yarn
 
